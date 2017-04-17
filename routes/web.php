@@ -27,20 +27,6 @@ Route::group(['middleware' => ['web'], 'prefix' => 'article'], function() {
   Route::post ( '/addItem', 'ArticleController@addItem' );
   Route::post ( '/deleteItem', 'ArticleController@deleteItem' );
 });
-/**
- * Admin routes
- */
-Route::group(['prefix' => 'admin'], function () {
-    Route::get('/', 'AdminController@dashboard')->name('admin:dashboard');
-
-    Route::get('{model_name}/{action?}/{id?}', 'AdminController@getModelAction')
-            ->name('admin:getModelAction')
-            ->where('id', '[0-9]+');
-
-    Route::post('{model_name}/{action?}/{id?}', 'AdminController@postModelAction')
-            ->name('admin:postModelAction')
-            ->where('id', '[0-9]+');
-});
 
 Auth::routes();
 

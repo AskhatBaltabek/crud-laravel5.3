@@ -1,6 +1,6 @@
 <?php
 
-header("Access-Control-Allow-Origin: *"); // for testing api @TODO delete this shit
+header("Access-Control-Allow-Origin: *");
 
 /**
  * Laravel - A PHP Framework For Web Artisans

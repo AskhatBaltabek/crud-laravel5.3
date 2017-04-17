@@ -66,10 +66,15 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
+            @if ( !Auth::user() )
                 <div class="top-right links">
                     <a href="{{ url('/login') }}">Login</a>
                     <a href="{{ url('/register') }}">Register</a>
+                </div>
+            @else
+                <div class="top-right links">
+                    <a href="#">{{ Auth::user()->name }}</a>
+                    <a href="{{ url('/logout') }}">logout</a>
                 </div>
             @endif
 
@@ -83,7 +88,7 @@
                     <a href="https://laracasts.com">Laracasts</a>
                     <a href="https://laravel-news.com">News</a>
                     <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="https://github.com/AskhatIbrahimov/crud-laravel5.3.git" target="_blank">Download</a>
                 </div>
             </div>
         </div>
